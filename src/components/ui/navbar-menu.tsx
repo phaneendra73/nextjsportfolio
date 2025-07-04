@@ -1,7 +1,7 @@
 
 "use client";
 import React from "react";
-import { motion , Transition} from "motion/react";
+import { motion , Transition} from "framer-motion";
 import Image from "next/image";
 
 const transition:Transition = {

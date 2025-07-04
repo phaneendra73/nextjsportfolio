@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from 'next-themes';
-import { ThemeToggle } from "@/components/theme-toggler";
+import { ModeToggle } from "@/components/theme-toggler";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +34,7 @@ export default function RootLayout({
           <div className="light">
           <Navbar  />
           </div>
-          <ThemeToggle/>
+          <ModeToggle/>
           {children}
         </ThemeProvider>
       </body>
