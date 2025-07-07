@@ -1,22 +1,27 @@
-'use client'
+"use client";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+export const ThemeToggle = () => {
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), []);
 
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded bg-gray-200 dark:bg-gray-800"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      className="p-2 rounded transition hover:opacity-75 focus:outline-none hover:cursor-pointer"
+      aria-label="Toggle Theme"
     >
-      {theme === 'dark' ? '🌞' : '🌙'}
+      {resolvedTheme === "dark" ? (
+        <FaSun className="h-5 w-5 text-foreground transition-transform hover:scale-110" />
+      ) : (
+        <FaMoon className="h-4 w-5 text-foreground transition-transform hover:scale-110" />
+      )}
     </button>
-  )
-}
+  );
+};
