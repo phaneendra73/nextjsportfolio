@@ -19,14 +19,15 @@ function HeroSection() {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
-  <h2 className="bg-opacity-50 bg-gradient-to-b from-black to-neutral-600 dark:from-neutral-50 dark:to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
-    Spotlight <br /> is the new trend.
+  <h2 className="mb-8 -opacity-50 bg-gradient-to-b from-black to-neutral-600 dark:from-neutral-50 dark:to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent md:text-7xl">
+    Crafting Code <br/>
+    Building Ideas<br/>
+    Ideas
   </h2>
   <p className="mx-auto mt-4 max-w-lg text-center text-base font-normal text-black/70 dark:text-muted-foreground">
-    Spotlight effect is a great way to draw attention to a specific part
-    of the page. Here, we are drawing the attention towards the text
-    section of the page. I don't know why but I'm running out of copy.
-  </p>
+    I'm a passionate developer who loves turning complex problems into elegant solutions.
+     Whether it's building seamless user interfaces or writing clean backend logic, I focus on performance, clarity, and impact.
+</p>
 </div>
 
     </div>
