@@ -53,18 +53,23 @@ export function ContainerTextFlip({
   }, [words, interval]);
 
   return (
-    <motion.p
+    <motion.div
       layout
       layoutId={`words-here-${id}`}
       animate={{ width }}
       transition={{ duration: animationDuration / 2000 }}
       className={cn(
-        "relative inline-block rounded-lg pt-2 pb-3 text-center text-4xl font-bold text-black md:text-7xl dark:text-white",
-        "[background:linear-gradient(to_bottom,#f3f4f6,#e5e7eb)]",
-        "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
-        "dark:[background:linear-gradient(to_bottom,#374151,#1f2937)]",
-        "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]",
-        className,
+        "relative inline-block rounded-lg pt-2 pb-2 text-center text-3xl font-bold text-black md:text-6xl dark:text-white",
+
+        // 🌟 Neon green gradient with 80% opacity using rgba
+        "[background:linear-gradient(to_bottom,rgba(57,255,20,0.6),rgba(102,255,102,0.6))]",
+        "shadow-[0_0_12px_#39FF1499,0_0_24px_#39FF1499,inset_0_0_0_1px_#39FF1499]",
+
+        // 🌙 Dark mode with strong neon visibility
+        "dark:[background:linear-gradient(to_bottom,#0f3d0f,#39FF14cc)]",
+        "dark:shadow-[0_0_16px_#39FF14cc,0_0_32px_#39FF14cc,inset_0_0_0_1px_#39FF14cc]",
+
+        className
       )}
       key={words[currentWordIndex]}
     >
@@ -98,6 +103,6 @@ export function ContainerTextFlip({
           ))}
         </motion.div>
       </motion.div>
-    </motion.p>
+    </motion.div>
   );
 }
