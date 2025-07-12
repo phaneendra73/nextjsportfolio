@@ -1,151 +1,129 @@
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
+import Image from "next/image";
 
 export function TimeLine() {
   const data = [
     {
-      title: "2024",
+      title: "Present",
       content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="md:w-1/2 space-y-4">
+            <h4 className="text-xl font-semibold text-green-600 dark:text-green-400">Software Developer @ Allcloud</h4>
+            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
+              Currently working at Allcloud, focusing on cloud-based solutions and innovative product development.
+            </p>
+          </div>
+          <div className="md:w-1/2 grid grid-cols-2 gap-6">
+            <Image
+              src="https://assets.aceternity.com/pro/hero-sections.png"
+              alt="Allcloud project"
+              width={300}
+              height={300}
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            />
+            <Image
+              src="https://assets.aceternity.com/features-section.png"
+              alt="Allcloud features"
+              width={300}
+              height={300}
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023 - 2019",
+      content: (
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="md:w-1/2 space-y-4">
+            <h4 className="text-xl font-semibold text-blue-600 dark:text-blue-400">B.Tech & 12th Grade</h4>
+            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
+              Completed B.Tech in Computer Science from GNIT (affiliated to JNTUH) with CGPA 7.2 in 2023.
+              <br />
+              Also completed 12th grade from Sri Gayathri Junior College with CGPA 8.7 in 2019.
+            </p>
+          </div>
+          <div className="md:w-1/2 grid grid-cols-2 gap-6">
+            <Image
+              src="https://assets.aceternity.com/cards.png"
+              alt="GNIT college"
+              width={300}
+              height={300}
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            />
+            <Image
+              src="https://assets.aceternity.com/pro/bento-grids.png"
+              alt="Sri Gayathri Junior College"
+              width={300}
+              height={300}
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2019 - 2017",
+      content: (
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="md:w-1/2 space-y-4">
+            <h4 className="text-xl font-semibold text-purple-600 dark:text-purple-400">Higher Secondary Education</h4>
+            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
+              Studied higher secondary education at Sri Gayathri Junior College, progressing academically during this period.
+            </p>
+          </div>
+          <div className="md:w-1/2 grid grid-cols-2 gap-6">
+            <Image
+              src="https://assets.aceternity.com/features-section.png"
+              alt="Sri Gayathri Junior College"
+              width={300}
+              height={300}
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            />
+            <Image
+              src="https://assets.aceternity.com/pro/hero-sections.png"
+              alt="Academic progress"
+              width={300}
+              height={300}
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2017",
+      content: (
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="md:w-1/2 space-y-4">
+            <h4 className="text-xl font-semibold text-red-600 dark:text-red-400">10th Grade Completion</h4>
+            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
+              Completed 10th grade from Telangana State Model High School with a CGPA of 8.3 in 2017.
+            </p>
+          </div>
+          <div className="md:w-1/2 grid grid-cols-2 gap-6">
+            <Image
               src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              alt="Telangana State Model High School"
+              width={300}
+              height={300}
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
             />
-            <img
+            <Image
               src="https://assets.aceternity.com/templates/startup-2.webp"
-              alt="startup template"
+              alt="School event"
               width={500}
               height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-3.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/templates/startup-4.webp"
-              alt="startup template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Early 2023",
-      content: (
-        <div>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            I usually run out of copy, but when I see content this big, I try to
-            integrate lorem ipsum.
-          </p>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Lorem ipsum is for people who are too lazy to write copy. But we are
-            not. Here are some more example of beautiful designs I built.
-          </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Changelog",
-      content: (
-        <div>
-          <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            Deployed 5 new components on Aceternity today
-          </p>
-          <div className="mb-8">
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Card grid component
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
             />
           </div>
         </div>
       ),
     },
   ];
+
   return (
     <div className="relative w-full overflow-clip">
       <Timeline data={data} />

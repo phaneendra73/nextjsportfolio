@@ -1,12 +1,12 @@
 import HeroSection from "@/components/HeroSection";
-import { GlareCardDemo } from "@/components/Glarecard";
 import { TimeLine } from "@/components/TimeLine";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 export default function Home() {
   return <>
   <HeroSection/>
-  <GlareCardDemo/>
     <TimeLine/>
+    <LinkPreview url="https://www.allcloud.in/" className="font-bold">ALLCLOUD</LinkPreview> 
   </>;
 }
 
