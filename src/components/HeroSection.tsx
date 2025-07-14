@@ -7,7 +7,7 @@ import Squares from "./ui/squares";
 
 function HeroSection() {
   return (
-    <div className="relative flex h-[45rem] w-full overflow-hidden rounded-md md:items-center md:justify-center">
+    <div className="relative flex h-[41rem] w-full overflow-hidden rounded-md md:items-center md:justify-center">
 <Squares
   speed={0.3}
   squareSize={40}

@@ -1,93 +1,104 @@
+// components/TimeLine.tsx
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
-import Image from "next/image";
+import { LinkPreview } from "./ui/link-preview";
+import allcloudImg from "@/assets/AllCloud.png";
+import gnitImg from "@/assets/GNI.png";
+import srigayatricol from "@/assets/srigayatri.png";
+import { ImageWithHoverBorderGradient } from "./ui/ImageWithHoverBorder";
 
+// ✅ Header Component with Consistent Styling
+type HeaderGreenColorProps = {
+  text: string;
+};
+
+function HeaderGreenColor({ text }: HeaderGreenColorProps) {
+  return (
+    <h4 className="text-2xl font-bold text-green-600 dark:text-green-400">
+      {text}
+    </h4>
+  );
+}
+
+// ✅ Timeline Component
 export function TimeLine() {
   const data = [
     {
       title: "Present",
       content: (
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2 space-y-4">
-            <h4 className="text-xl font-semibold text-green-600 dark:text-green-400">Software Developer @ Allcloud</h4>
-            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
-              Currently working at Allcloud, focusing on cloud-based solutions and innovative product development.
-            </p>
+            <HeaderGreenColor text="Software Engineer I" />
+            <div className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
+              Currently working at{" "}
+              <LinkPreview
+                url="https://www.allcloud.in/"
+                className="font-bold underline text-green-600 dark:text-green-400"
+              >
+                AllCloud
+              </LinkPreview>
+              , focusing on cloud-based solutions and innovative product
+              development.
+            </div>
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-6">
-            <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="Allcloud project"
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
-            />
-            <Image
-              src="https://assets.aceternity.com/features-section.png"
-              alt="Allcloud features"
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            <ImageWithHoverBorderGradient
+              src={allcloudImg}
+              alt="Gradient bordered image"
+              borderRadius="1.25rem"
+              duration={2}
             />
           </div>
         </div>
       ),
     },
     {
-      title: "2023 - 2019",
+      title: "2023",
       content: (
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2 space-y-4">
-            <h4 className="text-xl font-semibold text-blue-600 dark:text-blue-400">B.Tech & 12th Grade</h4>
-            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
-              Completed B.Tech in Computer Science from GNIT (affiliated to JNTUH) with CGPA 7.2 in 2023.
-              <br />
-              Also completed 12th grade from Sri Gayathri Junior College with CGPA 8.7 in 2019.
-            </p>
+            <HeaderGreenColor text="B.Tech in ECE" />
+            <div className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed space-y-2">
+              <p>
+                <strong>Guru Nanak Institute of Technology (GNIT)</strong>
+              </p>
+              <p>
+                CGPA: <strong>7.2</strong>
+              </p>
+            </div>
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-6">
-            <Image
-              src="https://assets.aceternity.com/cards.png"
-              alt="GNIT college"
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
-            />
-            <Image
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="Sri Gayathri Junior College"
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            <ImageWithHoverBorderGradient
+              src={gnitImg}
+              alt="GNIT College"
+              borderRadius="1.5rem"
+              duration={2}
             />
           </div>
         </div>
       ),
     },
     {
-      title: "2019 - 2017",
+      title: "2019",
       content: (
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2 space-y-4">
-            <h4 className="text-xl font-semibold text-purple-600 dark:text-purple-400">Higher Secondary Education</h4>
-            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
-              Studied higher secondary education at Sri Gayathri Junior College, progressing academically during this period.
-            </p>
+            <HeaderGreenColor text="Higher Secondary Education" />
+            <div className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed space-y-2">
+              <p>
+                <strong>Sri Gayathri Junior College</strong>
+              </p>
+              <p>
+                CGPA: <strong>8.7</strong>
+              </p>
+            </div>
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-6">
-            <Image
-              src="https://assets.aceternity.com/features-section.png"
-              alt="Sri Gayathri Junior College"
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
-            />
-            <Image
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="Academic progress"
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
+            <ImageWithHoverBorderGradient
+              src={srigayatricol}
+              alt="GNIT College"
+              borderRadius="1.5rem"
+              duration={2}
             />
           </div>
         </div>
@@ -96,37 +107,27 @@ export function TimeLine() {
     {
       title: "2017",
       content: (
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2 space-y-4">
-            <h4 className="text-xl font-semibold text-red-600 dark:text-red-400">10th Grade Completion</h4>
-            <p className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed">
-              Completed 10th grade from Telangana State Model High School with a CGPA of 8.3 in 2017.
-            </p>
+            <HeaderGreenColor text="10th Grade" />
+            <div className="text-neutral-700 dark:text-neutral-300 text-base md:text-lg leading-relaxed space-y-2">
+              <p>
+                <strong>TELANGANA STATE MODEL SCHOOL</strong>
+              </p>
+              <p>
+                CGPA: <strong>8.3</strong>
+              </p>
+            </div>
           </div>
-          <div className="md:w-1/2 grid grid-cols-2 gap-6">
-            <Image
-              src="https://assets.aceternity.com/templates/startup-1.webp"
-              alt="Telangana State Model High School"
-              width={300}
-              height={300}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
-            />
-            <Image
-              src="https://assets.aceternity.com/templates/startup-2.webp"
-              alt="School event"
-              width={500}
-              height={500}
-              className="rounded-lg shadow-lg object-cover hover:scale-105 transition-transform duration-300"
-            />
-          </div>
+          <div className="md:w-1/2 grid grid-cols-1 gap-6"></div>
         </div>
       ),
     },
   ];
 
   return (
-    <div className="relative w-full overflow-clip">
+    <section className="relative w-full px-4 md:px-8 py-10">
       <Timeline data={data} />
-    </div>
+    </section>
   );
 }
