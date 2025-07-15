@@ -2,9 +2,6 @@
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
 import { LinkPreview } from "./ui/link-preview";
-import allcloudImg from "@/assets/AllCloud.png";
-import gnitImg from "@/assets/GNI.png";
-import srigayatricol from "@/assets/srigayatri.png";
 import { ImageWithHoverBorderGradient } from "./ui/ImageWithHoverBorder";
 
 // ✅ Header Component with Consistent Styling
@@ -43,7 +40,7 @@ export function TimeLine() {
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-6">
             <ImageWithHoverBorderGradient
-              src={allcloudImg}
+              src="/allcloud.png"
               alt="Gradient bordered image"
               borderRadius="1.25rem"
               duration={2}
@@ -69,7 +66,7 @@ export function TimeLine() {
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-6">
             <ImageWithHoverBorderGradient
-              src={gnitImg}
+              src="/GNI.png"
               alt="GNIT College"
               borderRadius="1.5rem"
               duration={2}
@@ -95,7 +92,7 @@ export function TimeLine() {
           </div>
           <div className="md:w-1/2 grid grid-cols-2 gap-6">
             <ImageWithHoverBorderGradient
-              src={srigayatricol}
+              src="/srigayatri.png"
               alt="GNIT College"
               borderRadius="1.5rem"
               duration={2}

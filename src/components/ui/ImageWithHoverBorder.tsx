@@ -48,8 +48,10 @@ export function ImageWithHoverBorderGradient({
   const movingMap: Record<Direction, string> = {
     TOP: "radial-gradient(20.7% 50% at 50% 0%, #39FF14 0%, rgba(57, 255, 20, 0) 100%)",
     LEFT: "radial-gradient(16.6% 43.1% at 0% 50%, #39FF14 0%, rgba(57, 255, 20, 0) 100%)",
-    BOTTOM: "radial-gradient(20.7% 50% at 50% 100%, #39FF14 0%, rgba(57, 255, 20, 0) 100%)",
-    RIGHT: "radial-gradient(16.2% 41.2% at 100% 50%, #39FF14 0%, rgba(57, 255, 20, 0) 100%)",
+    BOTTOM:
+      "radial-gradient(20.7% 50% at 50% 100%, #39FF14 0%, rgba(57, 255, 20, 0) 100%)",
+    RIGHT:
+      "radial-gradient(16.2% 41.2% at 100% 50%, #39FF14 0%, rgba(57, 255, 20, 0) 100%)",
   };
 
   const highlight =
@@ -108,10 +110,9 @@ export function ImageWithHoverBorderGradient({
       <Image
         src={src}
         alt={alt}
-        className={cn(
-          "relative z-[2] block w-full h-full object-contain",
-          className
-        )}
+        width={500} // or your specific dimensions
+        height={300}
+        className={cn("relative z-[2] block object-contain", className)}
         style={{ borderRadius: `calc(${borderRadius} - 4px)` }}
         {...props}
       />
