@@ -95,20 +95,8 @@ export const CardBody = ({
   );
 };
 
-export const CardItem = ({
-  as: Tag = "div",
-  children,
-  className,
-  translateX = 0,
-  translateY = 0,
-  translateZ = 0,
-  rotateX = 0,
-  rotateY = 0,
-  rotateZ = 0,
-  ...rest
-}: {
-  as?: React.ElementType;
-  children: React.ReactNode;
+type CardItemOwnProps = {
+  children?: React.ReactNode;
   className?: string;
   translateX?: number | string;
   translateY?: number | string;
@@ -116,37 +104,68 @@ export const CardItem = ({
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  [key: string]: any;
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isMouseEntered] = useMouseEnter();
-
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const handleAnimations = () => {
-    if (!ref.current) return;
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
-    }
-  };
-
-
-  useEffect(() => {
-    handleAnimations();
-  }, [handleAnimations, isMouseEntered]);
-
-  return (
-    <Tag
-      ref={ref}
-      className={cn("w-fit transition duration-200 ease-linear", className)}
-      {...rest}
-    >
-      {children}
-    </Tag>
-  );
 };
+
+type CardItemProps<T extends React.ElementType> = CardItemOwnProps & {
+  as?: T;
+} & Omit<React.ComponentPropsWithoutRef<T>, keyof CardItemOwnProps | "as">;
+
+export const CardItem = React.forwardRef(
+  <T extends React.ElementType = 'div'>(
+    {
+      as,
+      children,
+      className,
+      translateX = 0,
+      translateY = 0,
+      translateZ = 0,
+      rotateX = 0,
+      rotateY = 0,
+      rotateZ = 0,
+      ...rest
+    }: CardItemProps<T>,
+    ref: React.Ref<Element>
+  ) => {
+    const Tag = as || "div";
+    const innerRef = useRef<HTMLElement>(null);
+    const [isMouseEntered] = useMouseEnter();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const handleAnimations = () => {
+      if (!innerRef.current) return;
+      if (isMouseEntered) {
+        innerRef.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+      } else {
+        innerRef.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+      }
+    };
+
+    useEffect(() => {
+      handleAnimations();
+    }, [handleAnimations, isMouseEntered]);
+
+    // Merge forwarded ref and local ref
+    useEffect(() => {
+      if (!ref) return;
+      if (typeof ref === "function") {
+        ref(innerRef.current);
+      } else if (ref) {
+        (ref as React.MutableRefObject<Element | null>).current = innerRef.current;
+      }
+    }, [ref]);
+
+    return React.createElement(
+      Tag,
+      {
+        ref: innerRef as any,
+        className: cn("w-fit transition duration-200 ease-linear", className),
+        ...rest
+      },
+      children
+    );
+  }
+);
+CardItem.displayName = "CardItem";
 
 // Create a hook to use the context
 export const useMouseEnter = () => {
