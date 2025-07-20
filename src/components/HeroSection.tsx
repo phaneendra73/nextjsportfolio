@@ -1,42 +1,53 @@
-'use client'
-import React from "react";
-import { Spotlight } from "./ui/Spotlight";
-import { ContainerTextFlip } from "@/components/ui/container-text-flip";
-import Squares from "./ui/squares";
+'use client';
+import React from 'react';
+import dynamic from 'next/dynamic';
+import { Spotlight } from './ui/Spotlight';
+import { ContainerTextFlip } from '@/components/ui/container-text-flip';
+import Squares from './ui/squares';
 
+const Scene = dynamic(() => import('./Scene'));
 
-function HeroSection() {
+export default function HeroSection() {
   return (
-    <div className="relative flex h-[41rem] w-full overflow-hidden rounded-md md:items-center md:justify-center">
-<Squares
-  speed={0.3}
-  squareSize={40}
-  direction="diagonal"
-  hoverFillColor="#39FF14"
->
+    <section className="relative flex h-[41rem] w-full overflow-hidden rounded-md md:items-center md:justify-center bg-gradient-to-br from-zinc-50 to-green-100 dark:from-zinc-950 dark:to-green-900">
+      <Squares
+        speed={0.3}
+        squareSize={40}
+        direction="diagonal"
+        hoverFillColor="#22c55e"
+      >
         <Spotlight
-          className="-top-50 left-0 md:-top-20 md:left-60"
-          fill="#39FF14"
+          className="-top-40 left-10 md:-top-20 md:left-60"
+          fill="#22c55e"
         />
 
-        <div className="relative z-10 mx-auto w-full max-w-4xl px-6 pt-28 md:pt-32 text-white text-center">
-  <h3 className="mb-6 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight bg-gradient-to-b from-neutral-950 to-neutral-800 dark:from-neutral-50 dark:to-neutral-300 bg-clip-text text-transparent">
-    I’m{"  "}
-    <ContainerTextFlip
-      words={["Phaneendra", "Full-Stack Dev", "Problem Solver", "Tech Explorer"]}
-    />
-  </h3> 
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-full px-6 md:px-16 py-10 gap-8">
+          {/* Left Content */}
+          <div className="md:w-1/2 text-center md:text-left space-y-4">
+            <p className="text-3xl md:text-5xl font-bold leading-tight text-zinc-900 dark:text-zinc-100">
+              Hi, I&apos;m <br/>Phaneendra
+            </p>
 
-<div className="mt-6 max-w-2xl mx-auto p-5 text-base md:text-lg leading-relaxed font-serif italic text-black bg-white/10 dark:bg-white/10 dark:text-white backdrop-blur-[1.5px] rounded-lg shadow-md border-l-4 border-green-500">
-  A passionate full-stack developer with 2 years of experience in both frontend and backend technologies.
-  I specialize in building robust web applications using tools like React, ASP.NET, SQL, and PostgreSQL.
-  Currently working at ALLCLOUD as a Software Engineer - I, constantly learning and evolving.
-</div>
-</div>
+            <p className="text-xl md:text-2xl text-zinc-700 dark:text-zinc-300">
+              A Developer Dedicated to Crafting
+            </p>
 
+            <ContainerTextFlip
+              words={['Secure', 'Modern', 'Scalable']}
+              className="text-2xl md:text-3xl font-semibold text-green-600 dark:text-green-400"
+            />
+
+            <p className="text-xl md:text-2xl font-bold text-zinc-800 dark:text-zinc-200">
+              Web Applications
+            </p>
+          </div>
+
+          {/* Right Content */}
+          <div className="md:w-1/1.9 w-full aspect-square md:aspect-video mt-6 md:mt-0">
+            <Scene />
+          </div>
+        </div>
       </Squares>
-    </div>
+    </section>
   );
 }
-
-export default HeroSection;

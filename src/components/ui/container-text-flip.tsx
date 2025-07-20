@@ -59,7 +59,7 @@ export function ContainerTextFlip({
       animate={{ width }}
       transition={{ duration: animationDuration / 2000 }}
       className={cn(
-        "relative inline-block rounded-lg pt-2 pb-2 text-center text-3xl font-bold text-black md:text-6xl dark:text-white",
+        "relative inline-block rounded-lg pt-2 pb-2 text-center text-xl font-bold text-black md:text-2xl dark:text-white",
 
         // 🌟 Neon green gradient with 80% opacity using rgba
         "[background:linear-gradient(to_bottom,rgba(57,255,20,0.6),rgba(102,255,102,0.6))]",

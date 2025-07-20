@@ -4,11 +4,12 @@ import ProjectsSection from "../components/CompanyCard";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  return <>
-  <HeroSection/>
-    <TimeLine/>
-    <ProjectsSection/>
-    <Footer/>
-  </>;
+  return (
+    <>
+      <HeroSection />
+      <TimeLine />
+      <ProjectsSection />
+      <Footer />
+    </>
+  );
 }
-
