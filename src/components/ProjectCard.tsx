@@ -14,7 +14,7 @@ type CompanyCardProps = {
   techStack?: string[];
 };
 
-export function CompanyCard({
+export function ProjectCard({
   title,
   subtitle,
   imageUrl,
@@ -25,21 +25,17 @@ export function CompanyCard({
   return (
     <CardContainer className="inter-var">
       <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[22rem] h-auto rounded-xl p-6 border">
-        {/* GitHub corner badge */}
         {githubUrl && (
           <div className="absolute top-0 right-0 z-10">
             <GithubLink href={githubUrl} />
           </div>
         )}
-        {/* Title */}
         <CardItem
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white"
         >
           {title}
         </CardItem>
-
-        {/* Subtitle */}
         <CardItem
           as="p"
           translateZ="60"
@@ -47,8 +43,6 @@ export function CompanyCard({
         >
           {subtitle}
         </CardItem>
-
-        {/* Image */}
         <CardItem translateZ="100" className="w-full mt-4">
           <Image
             src={imageUrl}
@@ -58,8 +52,6 @@ export function CompanyCard({
             className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
           />
         </CardItem>
-
-        {/* Tech stack (if any) */}
         {techStack.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-4">
             {techStack.map((tech) => (
@@ -72,8 +64,6 @@ export function CompanyCard({
             ))}
           </div>
         )}
-
-        {/* CTA Buttons */}
         <div className="flex justify-end mt-6">
           <CardItem
             translateZ={20}
@@ -93,62 +83,73 @@ export function CompanyCard({
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "Aceternity UI",
-      subtitle: "A modern 3D UI experience for tech portfolios.",
+      title: "Kadha",
+      subtitle:
+        "A minimal markdown-powered blog platform built with React and Chakra UI.",
       imageUrl:
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80",
-      githubUrl: "https://github.com/yourusername/aceternity-ui",
-      liveUrl: "https://aceternity-ui.vercel.app",
-      techStack: ["React", "Next.js", "Framer Motion", "TailwindCSS"],
+        "https://github.com/user-attachments/assets/e657be2a-33dd-48a5-beda-d334dd5f40b5", // Replace if image changes
+      githubUrl: "https://github.com/phaneendra73/kadha",
+      liveUrl: "https://phaneendra73.github.io/kadha/",
+      techStack: ["React", "Chakra UI", "Hono", "Prisma"],
     },
     {
-      title: "PortfolioX",
-      subtitle: "Next-gen developer portfolio template.",
-      imageUrl: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
-      githubUrl: "https://github.com/yourusername/portfoliox",
-      liveUrl: "https://portfoliox.vercel.app",
-      techStack: ["Next.js", "TypeScript", "TailwindCSS"],
-    },
-    {
-      title: "Blogify",
-      subtitle: "Markdown blog engine built with Next.js.",
-      imageUrl: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
-      githubUrl: "https://github.com/yourusername/blogify",
-      liveUrl: "https://blogify.vercel.app",
-      techStack: ["Next.js", "MDX", "Tailwind", "Vercel"],
-    },
-    {
-      title: "Aceternity UI",
-      subtitle: "A modern 3D UI experience for tech portfolios.",
+      title: "ViewMyWay",
+      subtitle:
+        "A simple blog writing platform using React and Prisma with markdown support.",
       imageUrl:
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80",
-      githubUrl: "https://github.com/yourusername/aceternity-ui",
-      liveUrl: "https://aceternity-ui.vercel.app",
-      techStack: ["React", "Next.js", "Framer Motion", "TailwindCSS"],
+        "https://github.com/user-attachments/assets/50821a72-549e-46ef-90d4-44117e7e6d77",
+      githubUrl: "https://github.com/phaneendra73/ViewMyWay",
+      liveUrl: "https://viewmyway.onrender.com",
+      techStack: ["React", "Prisma", "Markdown", "Node.js"],
+    },
+
+    {
+      title: "BingeWatch",
+      subtitle:
+        "Netflix-like UI built with HTML, CSS, and JS. Browse & save favorites.",
+      imageUrl:
+        "https://user-images.githubusercontent.com/118047850/233824675-6c6423f7-4402-46a1-b8f4-71c7c74c1f93.png",
+      githubUrl: "https://github.com/phaneendra73/BingeWatch",
+      liveUrl: "https://phaneendra73.github.io/BingeWatch/",
+      techStack: ["HTML", "CSS", "JavaScript"],
     },
     {
-      title: "PortfolioX",
-      subtitle: "Next-gen developer portfolio template.",
-      imageUrl: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
-      githubUrl: "https://github.com/yourusername/portfoliox",
-      liveUrl: "https://portfoliox.vercel.app",
-      techStack: ["Next.js", "TypeScript", "TailwindCSS"],
+      title: "Match The Cards",
+      subtitle:
+        "A fun memory game built using JavaScript. Flip and match pairs.",
+      imageUrl:
+        "https://user-images.githubusercontent.com/118047850/234286712-bff67eb5-5f0b-49d5-bfb7-db558cebfa60.png",
+      githubUrl: "https://github.com/phaneendra73/MatchTheCards",
+      liveUrl: "https://phaneendra73.github.io/MatchTheCards/",
+      techStack: ["HTML", "CSS", "JavaScript"],
     },
     {
-      title: "Blogify",
-      subtitle: "Markdown blog engine built with Next.js.",
-      imageUrl: "https://images.unsplash.com/photo-1556761175-4b46a572b786",
-      githubUrl: "https://github.com/yourusername/blogify",
-      liveUrl: "https://blogify.vercel.app",
-      techStack: ["Next.js", "MDX", "Tailwind", "Vercel"],
+      title: "Food Website",
+      subtitle:
+        "Immersive food website using HTML, CSS, jQuery. Hosted on GitHub Pages.",
+      imageUrl:
+        "https://user-images.githubusercontent.com/118047850/240611151-5e976b7d-85e0-42c1-9f00-7cca1fc5c4a6.png",
+      githubUrl: "https://github.com/phaneendra73/foodsite",
+      liveUrl: "https://phaneendra73.github.io/foodsite/",
+      techStack: ["HTML", "CSS", "jQuery"],
+    },
+    {
+      title: "Weather App",
+      subtitle:
+        "Responsive weather app using API & JSON. Built with JS and media queries.",
+      imageUrl:
+        "https://user-images.githubusercontent.com/118047850/242651552-f9e98f0c-a63e-4ce5-a4f5-2d9a1da9527d.png",
+      githubUrl: "https://github.com/phaneendra73/weather-API",
+      liveUrl: "https://phaneendra73.github.io/weather-API/",
+      techStack: ["HTML", "CSS", "JavaScript", "API"],
     },
   ];
 
   return (
-    <section className="py-4 px-4">
+    <section className="py-4 px-4" id="projects">
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((proj, i) => (
-          <CompanyCard key={i} {...proj} />
+          <ProjectCard key={i} {...proj} />
         ))}
       </div>
     </section>

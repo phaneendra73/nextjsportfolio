@@ -36,63 +36,63 @@ export default function NavBar() {
 
   return (
     <>
-        <Navbar>
-          {/* Desktop Navigation */}
-          <NavBody>
+      <Navbar>
+        {/* Desktop Navigation */}
+        <NavBody>
+          <NavbarLogo />
+          <NavBarItems />
+          <div className="flex items-center gap-4">
+            <NavbarButton variant="secondary">Login</NavbarButton>
+            <NavbarButton variant="secondary">
+              <ThemeToggle />
+            </NavbarButton>
+          </div>
+        </NavBody>
+
+        {/* Mobile Navigation */}
+        <MobileNav>
+          <MobileNavHeader>
             <NavbarLogo />
-            <NavBarItems />
-            <div className="flex items-center gap-4">
-              <NavbarButton variant="secondary">Login</NavbarButton>
-              <NavbarButton variant="secondary">
-                <ThemeToggle />
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </MobileNavHeader>
+
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
+            {navItems.map((item, idx) => (
+              <a
+                key={`mobile-link-${idx}`}
+                href={item.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="relative text-neutral-600 dark:text-neutral-300"
+              >
+                <span className="block">{item.name}</span>
+              </a>
+            ))}
+            <div className="flex w-full flex-col gap-4">
+              <NavbarButton
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full"
+              >
+                Login
+              </NavbarButton>
+              <NavbarButton
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full"
+              >
+                Book a call
               </NavbarButton>
             </div>
-          </NavBody>
-
-          {/* Mobile Navigation */}
-          <MobileNav>
-            <MobileNavHeader>
-              <NavbarLogo />
-              <MobileNavToggle
-                isOpen={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              />
-            </MobileNavHeader>
-
-            <MobileNavMenu
-              isOpen={isMobileMenuOpen}
-              onClose={() => setIsMobileMenuOpen(false)}
-            >
-              {navItems.map((item, idx) => (
-                <a
-                  key={`mobile-link-${idx}`}
-                  href={item.link}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="relative text-neutral-600 dark:text-neutral-300"
-                >
-                  <span className="block">{item.name}</span>
-                </a>
-              ))}
-              <div className="flex w-full flex-col gap-4">
-                <NavbarButton
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  variant="primary"
-                  className="w-full"
-                >
-                  Login
-                </NavbarButton>
-                <NavbarButton
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  variant="primary"
-                  className="w-full"
-                >
-                  Book a call
-                </NavbarButton>
-              </div>
-            </MobileNavMenu>
-          </MobileNav>
-        </Navbar>
-  </>
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+    </>
   );
 }
 
@@ -110,33 +110,46 @@ function NavBarItems() {
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Projects">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+          <div className="text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
+              title="Kadha"
+              href="https://phaneendra73.github.io/kadha/"
+              src="https://github.com/user-attachments/assets/e657be2a-33dd-48a5-beda-d334dd5f40b5"
+              description="A minimal markdown-powered blog platform built with React and Chakra UI."
             />
             <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
+              title="ViewMyWay"
+              href="https://viewmyway.onrender.com"
+              src="https://user-images.githubusercontent.com/118047850/243056289-65e014dc-f1e9-4a84-9e60-52c04df08c1d.png"
+              description="A simple blog writing platform using React and Prisma with markdown support."
             />
             <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
+              title="BingeWatch"
+              href="https://phaneendra73.github.io/BingeWatch/"
+              src="https://user-images.githubusercontent.com/118047850/233824675-6c6423f7-4402-46a1-b8f4-71c7c74c1f93.png"
+              description="Netflix-like UI built with HTML, CSS, and JS. Browse & save favorites."
             />
             <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              title="Match The Cards"
+              href="https://phaneendra73.github.io/MatchTheCards/"
+              src="https://user-images.githubusercontent.com/118047850/234286712-bff67eb5-5f0b-49d5-bfb7-db558cebfa60.png"
+              description="A fun memory game built using JavaScript. Flip and match pairs."
+            />
+            <ProductItem
+              title="Food Website"
+              href="https://phaneendra73.github.io/foodsite/"
+              src="https://user-images.githubusercontent.com/118047850/240611151-5e976b7d-85e0-42c1-9f00-7cca1fc5c4a6.png"
+              description="Immersive food website using HTML, CSS, and jQuery."
+            />
+            <ProductItem
+              title="Weather App"
+              href="https://phaneendra73.github.io/weather-API/"
+              src="https://user-images.githubusercontent.com/118047850/242651552-f9e98f0c-a63e-4ce5-a4f5-2d9a1da9527d.png"
+              description="Responsive weather app using API & JSON. Built with JS and media queries."
             />
           </div>
         </MenuItem>
+
         <MenuItem
           setActive={setActive}
           active={active}
