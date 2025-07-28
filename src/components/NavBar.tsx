@@ -120,7 +120,7 @@ function NavBarItems() {
             <ProductItem
               title="ViewMyWay"
               href="https://viewmyway.onrender.com"
-              src="https://user-images.githubusercontent.com/118047850/243056289-65e014dc-f1e9-4a84-9e60-52c04df08c1d.png"
+              src="https://github.com/user-attachments/assets/50821a72-549e-46ef-90d4-44117e7e6d77"
               description="A simple blog writing platform using React and Prisma with markdown support."
             />
             <ProductItem

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState,useEffect} from "react";
 import dynamic from "next/dynamic";
 import { Spotlight } from "./ui/Spotlight";
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
@@ -8,6 +8,14 @@ import Squares from "./ui/squares";
 const Scene = dynamic(() => import("./Scene"));
 
 export default function HeroSection() {
+  const [showScene, setShowScene] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setShowScene(true);
+    }
+  }, []);
+
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden rounded-md bg-gradient-to-br from-zinc-50 to-green-100 dark:from-zinc-950 dark:to-green-900">
       <Squares
@@ -21,7 +29,8 @@ export default function HeroSection() {
           fill="#22c55e"
         />
 
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-center h-full px-6 md:px-16 py-10 gap-8 md:gap-12">
+       <div className="relative z-10 flex flex-col mt-20 md:mt-0 md:flex-row items-center justify-center md:justify-between h-full px-6 md:px-16  gap-8 md:gap-12">
+
           {/* Left Content */}
           <div className="md:w-1/2 w-full flex flex-col items-center md:items-start justify-center space-y-6 text-center md:text-left px-2">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 leading-snug">
@@ -44,10 +53,10 @@ export default function HeroSection() {
 
           {/* Right Content */}
           <div className="md:w-[55%] w-full h-[350px] md:h-[500px] mt-6 md:mt-0">
-            <Scene />
+             {showScene && <Scene />}
           </div>
 
-             {/* Scroll action */}
+          {/* Scroll action */}
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
             <div className="animate-bounce text-green-600 dark:text-green-400">
               <svg
